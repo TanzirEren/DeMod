@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#1E63B5</color>
+    <color name="primary_container">#D6E6FA</color>
+    <color name="teal">#19C3CE</color>
+    <color name="white">#FFFFFF</color>
+    <color name="bg">#F4F7FB</color>
+    <color name="ic_bg">#F1F5F9</color>
+    <color name="sev3">#E5484D</color>
+    <color name="sev2">#F59E0B</color>
+    <color name="sev1">#3B82F6</color>
+    <color name="sev0">#94A3B8</color>
+    <color name="diff_add">#16A34A</color>
+    <color name="diff_del">#DC2626</color>
+    <color name="diff_hunk">#0891B2</color>
+</resources>

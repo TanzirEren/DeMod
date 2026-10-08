@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#7FB2F0</color>
+    <color name="primary_container">#17375E</color>
+    <color name="bg">#0E141B</color>
+    <color name="diff_add">#4ADE80</color>
+    <color name="diff_del">#F87171</color>
+    <color name="diff_hunk">#22D3EE</color>
+</resources>

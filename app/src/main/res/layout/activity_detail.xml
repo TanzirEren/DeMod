@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg"
+    android:orientation="vertical">
+    <include layout="@layout/header" />
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+        <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:id="@+id/tvDetail" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:fontFamily="monospace" android:minWidth="360dp" android:padding="16dp"
+                android:textIsSelectable="true" android:textSize="12sp" />
+        </HorizontalScrollView>
+    </ScrollView>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:padding="10dp">
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnCopy" android:layout_width="0dp"
+            android:layout_height="wrap_content" android:layout_marginEnd="6dp" android:layout_weight="1"
+            android:text="Copy" style="@style/Widget.Material3.Button.OutlinedButton" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnShare" android:layout_width="0dp"
+            android:layout_height="wrap_content" android:layout_marginEnd="6dp" android:layout_weight="1"
+            android:text="Share" style="@style/Widget.Material3.Button.OutlinedButton" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnStar" android:layout_width="0dp"
+            android:layout_height="wrap_content" android:layout_weight="1" android:text="Bookmark"
+            style="@style/Widget.Material3.Button.OutlinedButton" />
+    </LinearLayout>
+</LinearLayout>
