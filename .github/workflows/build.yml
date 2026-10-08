@@ -8,18 +8,32 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-java@v4
-        with: { distribution: temurin, java-version: '17' }
-      - uses: android-actions/setup-android@v3
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      # The runner already ships the Android SDK, so no setup-android action is needed.
       - name: Install SDK / NDK / CMake
         run: |
-          yes | sdkmanager --licenses > /dev/null || true
-          sdkmanager "platforms;android-34" "build-tools;34.0.0" "ndk;26.1.10909125" "cmake;3.22.1"
+          SDKM="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
+          yes | "$SDKM" --licenses > /dev/null || true
+          "$SDKM" "platforms;android-34" "build-tools;34.0.0" "ndk;26.1.10909125" "cmake;3.22.1"
+
       - uses: gradle/actions/setup-gradle@v3
-        with: { gradle-version: '8.5' }
+        with:
+          gradle-version: '8.5'
+
       - name: Build APKs
         run: gradle --no-daemon assembleDebug assembleRelease
+
       - uses: actions/upload-artifact@v4
-        with: { name: DeMod-debug-apk, path: app/build/outputs/apk/debug/*.apk }
+        with:
+          name: DeMod-debug-apk
+          path: app/build/outputs/apk/debug/*.apk
+
       - uses: actions/upload-artifact@v4
-        with: { name: DeMod-release-apk, path: app/build/outputs/apk/release/*.apk }
+        with:
+          name: DeMod-release-apk
+          path: app/build/outputs/apk/release/*.apk
